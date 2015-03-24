@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <meta name="mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <title><%= yield_content(:title) %></title>
 
@@ -15,9 +16,34 @@
 
   <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
   <link rel="icon" href="/assets/favicon.ico">
+<script type="text/javascript">
+  window.onload = function initialLoad(){
+      updateOrientation();
+  }
+  
+  function updateOrientation(){
+      var contentType = "show_";
+      switch(window.orientation){
+      case 0:
+          contentType += "normal";
+          break;
+      case -90:
+          contentType += "right";
+          break;
+      case 90:
+          contentType += "left";
+          break;
+      case 180:
+          contentType += "flipped";
+          break;
+      }
+	  
+      document.getElementById("body").setAttribute("class", contentType);
 
+  }
+</script>
 </head>
-  <body>
+  <body id="body">
     <div id="container">
       <%= yield %>
     </div>
