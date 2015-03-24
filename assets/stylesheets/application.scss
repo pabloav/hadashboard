@@ -49,10 +49,10 @@ body {
   font-family: 'Helvetica Neue', 'Helvetica', 'Open Sans', 'Arial'
 }
 
-body.show_normal { -webkit-transform: rotate(90);}
-body.show_right { -webkit-transform: rotate(0);}
-body.show_left { -webkit-transform: rotate(0);}
-body.show_flipped { -webkit-transform: rotate(90);}
+body.show_normal { -webkit-transform: rotate(90deg);}
+body.show_right { -webkit-transform: rotate(0deg);}
+body.show_left { -webkit-transform: rotate(0deg);}
+body.show_flipped { -webkit-transform: rotate(90deg);}
 
 b, strong {
   font-weight: bold;
